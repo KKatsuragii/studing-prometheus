@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: Prometheus
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          grupo: 'Prometehus'
+  - job_name: Api
+    static_configs:
+      - targets: ['20.185.77.33']
+        labels:
+          grupo: 'Api'
+          conteudo: 'teste'
